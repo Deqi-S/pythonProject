@@ -1,16 +1,18 @@
-# 这是一个示例 Python 脚本。
+def bubble_sort(arr):
+    n = len(arr)
 
-# 按 Shift+F10 执行或将其替换为您的代码。
-# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+    # 遍历数组元素
+    for i in range(n):
+        # 每次遍历找到当前未排序部分的最大元素，并将其放置到正确的位置
+        for j in range(0, n - i - 1):
+            # 如果当前元素大于下一个元素，则交换它们的位置
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
 
-def print_hi(name):
-    # 在下面的代码行中使用断点来调试脚本。
-    print(f'Hi, {name}')  # 按 Ctrl+F8 切换断点。
-
-
-# 按间距中的绿色按钮以运行脚本。
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+# 测试示例
+arr = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(arr)
+print("排序后的数组：")
+for i in range(len(arr)):
+    print(arr[i], end=" ")
